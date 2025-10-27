@@ -81,7 +81,7 @@ class ProdukController extends Controller
         if ($produk) {
             $validate = $request->validate([
             'nama' => 'required',
-            'kode_produk' => 'required',
+            'kode_produk',
             'deskripsi' => 'required'
             ]);
 

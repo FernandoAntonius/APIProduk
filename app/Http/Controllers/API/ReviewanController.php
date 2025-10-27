@@ -84,7 +84,7 @@ class ReviewanController extends Controller
         if ($reviewan) {
             $validate = $request->validate([
                 'nama' => 'required',
-                'kode_review' => 'required|unique:reviewans,id' . $id,
+                'kode_review' => 'required',
                 'deskripsi' => 'required',
                 'rekomendasi' => 'required',
                 'produks_id' => 'required|exists:produks,id'

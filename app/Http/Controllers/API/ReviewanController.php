@@ -79,13 +79,14 @@ class ReviewanController extends Controller
      */
     public function update(Request $request, string $id)
     {
+ 
         $reviewan = Reviewan::find($id);
         if ($reviewan) {
             $validate = $request->validate([
                 'nama' => 'required',
-                'kode_review' => 'required',
-                'deskripsi' => 'required',
-                'rekomendasi' => 'required',
+                'kode_review' => 'required|unique:reviewans, kode_review' . $id,
+                'deskripsi' => '',
+                'rekomendasi' => '',
                 'produks_id' => 'required|exists:produks,id'
             ]);
 
